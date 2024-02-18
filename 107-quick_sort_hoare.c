@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
   * quick_sort_hoare - quicksort algorithm
   * @array: array to be sorted
@@ -20,11 +21,11 @@ void sort_alg(int *arr, int left, int right, size_t size)
 {
 	int pivot;
 
-	if ((right - left) < 2)
+	if ((right - left) <= 0)
 		return;
 	pivot = split(arr, left, right, size);
 	sort_alg(arr, left, pivot, size);
-	sort_alg(arr, pivot, right, size);
+	sort_alg(arr, pivot + 1, right, size);
 }
 
 /**
